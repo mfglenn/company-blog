@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ArticlesList from '../components/ArticlesList';
 import Article from '../components/Article';
 import articles from './article-content';
+import NotFoundPage from './NotFoundPage';
 
 export default class ArticlePage extends Component {
     render() {
@@ -15,7 +16,7 @@ export default class ArticlePage extends Component {
         let article = articles.find(lkp => lkp.name === name);    
         
         if (!article){
-            return (<h1>Article does not exist.</h1>)
+            return (<NotFoundPage/>)
         }
         let relatedArticles = articles.filter(lkp => lkp.name !== name);
 
