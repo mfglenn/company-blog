@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class ArticlesPage extends Component {
+export default class ArticlePage extends Component {
     render() {
         //Deconstruct match property from props
         const { match } = this.props;
