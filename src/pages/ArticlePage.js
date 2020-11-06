@@ -13,7 +13,7 @@ export default class ArticlePage extends Component {
         //Lookup article
         let article = articles.find(lkp => lkp.name === name);    
         if (!article){
-            article = articles[0];
+            return (<h1>Article does not exist.</h1>)
         }
         return(
             <React.Fragment>    
