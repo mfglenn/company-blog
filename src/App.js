@@ -9,7 +9,7 @@ import './App.css';
 import HomePage from './pages/HomePage'
 
 //App Component Definition
-class App extends Component {
+export default class App extends Component {
   render() {
     return(
       <Router>
@@ -20,5 +20,3 @@ class App extends Component {
     )
   }
 }
-
-export default App;
