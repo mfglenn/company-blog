@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Article from '../components/Article'
-import articles from './article-content'
+import Article from '../components/Article';
+import articles from './article-content';
 
 export default class ArticlePage extends Component {
     render() {
