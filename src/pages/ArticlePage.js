@@ -16,7 +16,7 @@ export default class ArticlePage extends Component {
         let article = articles.find(lkp => lkp.name === name);    
         
         if (!article){
-            return (<NotFoundPage/>)
+            return (<NotFoundPage/>);
         }
         let relatedArticles = articles.filter(lkp => lkp.name !== name);
 
