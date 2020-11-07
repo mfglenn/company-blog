@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import ArticlesList from '../components/ArticlesList';
-import Article from '../components/Article';
+import CommentsList from '../components/CommentsList';
 import articles from './article-content';
 import NotFoundPage from './NotFoundPage';
+import UpvoteSection from '../components/UpvoteSection';
 
 const ArticlePage = ({ match }) => {     
     //Get query parameter name
@@ -21,8 +22,6 @@ const ArticlePage = ({ match }) => {
 
     //Lookup article
     let article = articles.find(lkp => lkp.name === name);    
-    article.upvotes = articleInfo.upvotes;
-    article.comments = articleInfo.comments;
 
     if (!article) {
         return (<NotFoundPage/>);
@@ -31,7 +30,12 @@ const ArticlePage = ({ match }) => {
 
     return(
         <React.Fragment>    
-            <Article key={1} article={article} />
+            <h1>{article.title}</h1>
+            <UpvoteSection articleName={name} upvotes={articleInfo.upvotes} setArticleInfo={setArticleInfo}/>
+            {article.content.map( (paragraph, j) => {
+                return (<p key={j}>{paragraph}</p>) 
+            })}
+            <CommentsList comments={articleInfo.comments}/>
             <h3>Other Articles</h3>
             <ArticlesList articles={relatedArticles} /> 
         </React.Fragment>
